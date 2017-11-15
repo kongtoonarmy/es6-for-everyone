@@ -4,39 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>06 - Arrow Functions Introduction</title>
+    <title>07 - More Arrow Function Examples</title>
 </head>
 <body>
 <script>
-    const names = ['wes', 'kait', 'lux'];
+    const race = '100m Dash';
+    const winners = ['Hunter Gath', 'Singa Song', 'Imda Bos'];
 
-    const fullNames = names.map(function(name) {
-        return `${name} bos`;
-    });
+    const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));
 
-    const fullNames2 = names.map((name) => {
-        return `${name} bos`;
-    });
+    const ages = [23, 62, 45, 234, 2, 62, 234, 62, 34];
 
-    const fullNames3  = names.map(name => {
-        return `${name} bos`;
-    });
-
-    const fullNames4  = names.map(name => `${name} bos`);
-
-    const fullNames5 = names.map(() => `cool bos`);
-
-    console.log(fullNames);
-    console.log("After fullname");
-    console.log(fullNames2);
-    console.log(fullNames3); 
-    console.log(fullNames4); 
-    console.log(fullNames5) 
-
-    const sayMyName = (name) => { 
-        alert(`Hello ${name}!`)
-    }
-    sayMyName("Kongyot");
-</script>
+    const old = ages.filter(age => age >= 60); 
+    console.log(old);
+</script> 
 </body>
 </html>
