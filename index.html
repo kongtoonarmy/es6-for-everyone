@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>let and const</title>
+    <title>03 - let and const in the Real World</title>
 </head>
 <body>
 <script>
-    const key = 'abc123';
-    let points = 50;
-    var winner = false;
-
-    const person = {
-        name: 'Wes',
-        age: 28
+    {
+        const name = 'wes';
     }
 
-    const wes = Object.freeze(person); 
-
+    for(let i =0; i < 10; i++) {
+        console.log(i);
+        setTimeout(function() {
+            console.log('The number is ' + i);
+        }, 1000);
+    }
 
 </script>
 </body>
