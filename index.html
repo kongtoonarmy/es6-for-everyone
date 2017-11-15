@@ -8,17 +8,17 @@
 </head>
 <body>
 <script>
-    var width = 100;
-    function setWidth() {
-        console.log(width);
-    }
-    setWidth();
+    const key = 'abc123';
+    let points = 50;
+    var winner = false;
 
-    var age = 100;
-    if (age > 12) {
-        var dogYears = age * 7;
-        console.log(`You are ${dogYears} dog years old!`);
+    const person = {
+        name: 'Wes',
+        age: 28
     }
+
+    const wes = Object.freeze(person); 
+
 
 </script>
 </body>
