@@ -4,55 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>09 - Default Function Arguments</title>
+    <title>11 - Arrow Functions Exercises</title>
 
    
 </head>
 <body>
-<style>
-    button { font-size: 100px; }
-    .on { background: #ffc600; }
-</style>
-<button id="pushy">Push Me</button>
+
+<ul>
+    <li data-time="5:17">Flexbox Video</li>
+    <li data-time="8:22">Flexbox Video</li>
+    <li data-time="3:34">Redux Video</li>
+    <li data-time="5:23">Flexbox Video</li>
+    <li data-time="7:12">Flexbox Video</li>
+    <li data-time="7:24">Redux Video</li>
+    <li data-time="6:46">Flexbox Video</li>
+    <li data-time="4:45">Flexbox Video</li>
+    <li data-time="4:40">Flexbox Video</li>
+    <li data-time="7:58">Redux Video</li>
+    <li data-time="11:51">Flexbox Video</li>
+    <li data-time="9:13">Flexbox Video</li>
+    <li data-time="5:50">Flexbox Video</li>
+    <li data-time="5:52">Redux Video</li>
+    <li data-time="5:49">Flexbox Video</li>
+    <li data-time="8:57">Flexbox Video</li>
+    <li data-time="11:29">Flexbox Video</li>
+    <li data-time="3:07">Flexbox Video</li>
+    <li data-time="5:59">Redux Video</li>
+    <li data-time="3:31">Flexbox Video</li>
+</ul>
 
 
 <script>
-    // When you relly need `this`
-    const button = document.querySelector('#pushy');
-    button.addEventListener('click', function() {
-        this.classList.toggle('on');
-    });
+    const items = Array.from(document.querySelectorAll('[data-time]'));
 
-    // When you need a method to bind to an object
-    const person = {
-        points: 23,
-        score: function() {
-            console.log(this);
-            this.points++;
-        }
-    }
+    const filtered = items
+        .filter(item => item.textContent.includes('Flexbox'))
+        .map(item => item.dataset.time)
+        .map(timecode => {
+            const parts = timecode.split(':').map(part => parseFloat(part));
+            return (parts[0] * 60) + parts[1];
+        })
+        .reduce((runningTotal, second) => runningTotal + second, 0)
 
-    // When you need to add a prototype method
-    class Car {
-        constructor(make, colour) {
-            this.make = make;
-            this.colour = colour;
-        }
-    }
+    console.log(filtered);
 
-    const beemer = new Car('bmw', 'blue');
-    const subie = new Car('Subaru', 'white');
-    Car.prototype.summarize = function() {
-        return `This car is a ${this.make} in the colour ${this.colour}`;
-    }
+    // 1. Given this array: `[3,62,234,7,23,74,23,76,92]`, use the array filter method and an arrow function to create an array of the numbers greater than `70`
+    const numbers = [3, 62, 234, 7, 23, 74, 23, 76, 92];
 
-    // When you need arguments object
-    const orderChildren = function() {
-        const children = Array.from(arguments);  
-        return children.map((child, i) => {
-            return `${child} was child #${i + 1}`;
-        });
-    }
-</script> 
+    const large = numbers.filter(num => num > 70);
+    console.log(large);
+
+</script>
+
+
 </body>
 </html>
