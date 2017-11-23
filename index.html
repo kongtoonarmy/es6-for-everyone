@@ -4,95 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>12 - Template Strings Introduction</title>
+    <title>14 - Tagged Template Literals</title>
 
-   
+   <style>
+       .h1 {
+           background: #ffc600;
+       }
+   </style>
 </head>
 <body>
 
 <script>
-    /* #1
-    const person = {
-        name: 'Kong',
-        job: 'Full Stack Developer',
-        city: 'Hamilton',
-        bio: 'Kong is really cool guy that loves to teach web development'
-    };
+    function highlight(strings, ...values) {
+        //debugger;
+        let str = '';
+        
+        strings.forEach((string, i) => {
+            str += `${string} <span class="h1">${values[i] || ''}</span>`;
+        });
+        return str;
+    } 
 
-    const markup = `
-        <div class="person">
-            <h2>
-            ${person.name}
-            <span class="job">${person.job}</span>
-            </h2>
-            <p class="location">${person.city}</p>
-            <p class="bio">${person.bio}</p>
-        </div>`;
+    const name = 'Snickers';
+    const age = 100;
 
-    document.body.innerHTML = markup;    
-    */
-
-    /* #2
-    const dogs = [
-        { name: 'Snickers', age:2 },
-        { name: 'Hugo', age: 8 },
-        { name: 'Sunnry', age:1 }
-    ];
-    const markup = `
-        <ul class="dogs">
-        ${dogs.map(dog => `
-            <li>
-                ${dog.name} is 
-                ${dog.age * 7}
-            </li>`).join('')
-        }
-        </ul>
-    `;
-    document.body.innerHTML = markup;   
-    */ 
-
-    /* #2
-    const song = {
-        name: 'Dying to live',
-        artist: 'Tupac',
-        featuring: 'Biggie Smalls', // You can comment out to test
-    };
-
-    const markup = `
-        <div class="song">
-            <p>
-                ${song.name} - ${song.artist}
-                ${song.featuring ? `(Featuring ${song.featuring})` : ''  }
-            </p>
-        </div>
-    `;
-
-    document.body.innerHTML = markup;
-    */
-
-    const beer = {
-        name: 'Belgian Wit',
-        brewery: 'Steam Whistle Brewery',
-        keywords: ['pale', 'cloudy', 'spiced', 'crisp']
-    };
-
-    function renderKeywords(keywords) {
-        return `
-            <ul>
-                ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
-            </ul>
-        `;
-    }
-
-    const markup = `
-        <div class="beer">
-            <h2>${beer.name}</h2>
-            <p class="brewery">${beer.brewery}</p>
-            ${renderKeywords(beer.keywords)}
-        </div>
-    `;
-
-    document.body.innerHTML = markup;
+    const sentence = highlight`My dog's name is ${name} and he is ${age} years old`; 
+    document.body.innerHTML = sentence;
+    console.log(sentence);
 </script>
 
 </body>
