@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20 - Swapping Variables with Destructuring</title>
+
+</head>
+<body>
+
+<script>
+function convertCurrency(amount) {
+    const converted = {
+        USD: amount * 0.76,
+        GPB: amount * 0.53,
+        AUD: amount * 1.01,
+        MEX: amount * 13.30
+    }
+    return converted;
+}
+
+const {MEX, USD, AUD, GPB} = convertCurrency(100);
+//console.log(USD, GPB, AUD, MEX)
+
+function tipCalc({total = 100, tip = 0.15, tax = 0.13} = {}) {
+    return total + (tip * total) + (tax * total);
+}
+
+const bill = tipCalc();
+console.log(bill);
+
+</script>
+
+</body>
+</html> 
