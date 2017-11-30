@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18 - Destructuring Objects</title>
+
+</head>
+<body>
+    <div class="bio"></div>
+
+<script>
+const person = {
+    first: 'Kong',
+    last: 'Roj',
+    country: 'Thailand',
+    city: 'Bangkok',
+    twitter: '@kongtoonarmy'
+};
+
+//const { first, last, twitter } = person;
+
+const kong = {
+    first: 'Kong',
+    last: 'Roj',
+    links: {
+      social: {
+        twitter: 'https://twitter.com/kongtoonarmy',
+        facebook: 'https://facebook.com/kongtoonarmy',
+      },
+      web: {
+        blog: 'https://kongyot.com'
+      } 
+    }
+  };
+
+const { twitter: tweet, facebook: fb } = kong.links.social;
+
+const settings = { width: 300, color: 'black' } // height, fontsize
+//const { width = 100, height = 100, color = 'blue', fontSize = 25 } = settings;
+
+const { w: width = 400, h: height = 500 } = { w: 800 }
+
+</script>
+
+</body>
+</html> 
