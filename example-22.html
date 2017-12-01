@@ -4,30 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>20 - Swapping Variables with Destructuring</title>
+    <title>22 - The for of loop</title>
 
 </head>
 <body>
 
 <script>
-function convertCurrency(amount) {
-    const converted = {
-        USD: amount * 0.76,
-        GPB: amount * 0.53,
-        AUD: amount * 1.01,
-        MEX: amount * 13.30
+
+Array.prototype.shuffle = function() {
+    var i = this.length, j, temp;
+    if (i == 0) return this;
+    while (--i) {
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[i];
+        this[i] = this[j];
+        this[j] = temp;
     }
-    return converted;
-}
 
-function tipCalc({total = 100, tip = 0.15, tax = 0.13} = {}) {
-    return total + (tip * total) + (tax * total);
-}
+    return this;
+};
 
-const bill = tipCalc({ total: 200, tip: 0.20 });
-console.log(bill);
+const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
+
+cuts.shop = 'MM MEats';
+
+/* for (const index in cuts) {
+    console.log (cuts[index]);
+} */
+
+for (const cut of cuts) {
+    if (cut === 'Brisket') {
+        continue;
+    }
+    console.log(cut)
+}
 
 </script>
-
+ 
 </body>
 </html> 
