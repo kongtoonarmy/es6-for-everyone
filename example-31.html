@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>31 - Spreading into a function</title>
+
+</head>
+<body>
+    
+<script>
+const inventors = ['Einstein', 'Newton', 'Galileo'];
+const newInventors = ['Musk', 'Jobs'];
+
+//inventors.push.apply(inventors, newInventors);
+//inventors.push('Musk', 'Jobs');
+inventors.push(...newInventors);
+
+console.log(inventors);
+
+const name = ['Kongyot', 'Roj'];
+function sayHi(first, last) {
+    alert(`Hey there ${first} ${last}`);
+}
+
+sayHi(...name);
+
+</script>    
+ 
+</body>
+</html>  
