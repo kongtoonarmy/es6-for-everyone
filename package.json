@@ -1,0 +1,15 @@
+{
+  "name": "es6-for-everyone.dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bad-code.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}
