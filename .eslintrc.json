@@ -19,5 +19,6 @@
         "consistent-return": 0,
         "react/prefer-es6-class": 0,
         "radix": 0
-    }
+    },
+    "plugins": ["html", "markdown"]
 }
