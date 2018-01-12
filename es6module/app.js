@@ -7,13 +7,14 @@ import {
     sayHi, 
     old, 
     dog 
-} from './src/config'
+} from './src/config';
 
-console.log(key, url);
+import User, {createURL, gravatar  } from './src/user'; 
 
-sayHi('Kongyot');
+const user = new User('Kongyot', 'kongtoonarmy@hotmail.com', 'kongyot.com');
+const profile = createURL(user.name);  
+console.log(profile);   
 
-const ages = [1,1,4,52,12,4];
-
-console.log(uniq(ages)); 
-
+const image = gravatar(user.email);
+console.log(image);
+ 
